@@ -1,0 +1,28 @@
+$ORIGIN zone.ephec2022.fr.
+$TTL  604800
+@       IN      SOA     ns.zone.ephec2022.fr. he201896.students.ephec.be. (
+                        1       ; Serial
+                        604800  ; Refresh
+                        86400   ; Retry
+                        2419200 ; Expire
+			604800 ); Negative Cache TTL			
+;
+; NS configs
+            IN      NS      ns.zone.ephec2022.fr.
+            IN      MX  10  mail
+ns          IN      A       37.19.9.121
+
+
+; Web
+b2b         IN      A       37.19.9.121
+www         IN      A       37.19.9.121
+
+; Mail
+mail        IN      A       37.19.9.121
+smtp        IN      CNAME   mail
+
+
+;VoIP
+_sip._udp	SRV     10      100       5060        sip 
+_sip._tcp	SRV     10       100       5060        sip
+sip		IN	    A	    37.19.9.121
